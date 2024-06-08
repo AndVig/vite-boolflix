@@ -11,6 +11,8 @@ export default{
     },
     methods:{
         searchMovie(){
+            this.store.movies=[];
+
             const url =this.store.apiInfo.baseUrl + this.store.apiInfo.endpoints.movies;
             axios.get(url, {
                 params:{
