@@ -38,6 +38,8 @@ export default{
             <button @click="searchMovie">Cerca</button>
         </div>
     </header>
+
+    
     
 </template>
 

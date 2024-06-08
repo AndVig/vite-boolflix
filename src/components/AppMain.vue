@@ -1,13 +1,30 @@
 <script>
 
+    import {store} from '../store'
+    
+    export default{
+        name: 'AppMain',
+        data(){
+        return{
+            store,
+        }
+    },
+        
+    }
 </script>
 
 <template>
-    <h1>Boolflix</h1>
+    
     <div>
-        <label for="">Ricerca</label>
-        <input type="text" id="search-movie">
-        <button></button>
+        <ul>
+            <li v-for="movie in store.movies">
+                <p>Titolo: {{ movie.title }}</p>
+                <p>Titolo originale: {{ movie.original_title }}</p>
+                <p>Lingua: {{ movie.original_language }}</p>
+                <p>Voto: {{ movie.vote_average }}</p>
+                
+            </li>
+        </ul>
     </div>
 </template>
 

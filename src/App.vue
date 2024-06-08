@@ -1,40 +1,25 @@
 <script>
-import {store} from './store'
+
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 
 export default{
     name: 'Boolflix',
     components:{
-        AppHeader
+        AppHeader,
+        AppMain,
     },
-    data(){
-        return{
-            store,
-        }
-    },
-    // methods:{
-    //     searchMovie(){
-    //         const url =this.store.apiInfo.baseUrl + this.store.apiInfo.endpoints.movies;
-    //         axios.get(url, {
-    //             params:{
-    //                 api_key: this.store.apiInfo.key,
-    //                 language: this.store.languageKey,
-    //                 query:this.store.searchKey,
-    //             }
-    //         })
-    //         .then((response)=> {
-    //             console.log(response.data.results);
-    //             this.store.movies=response.data.results;
-    //         })
-    //         .catch((error)=> console.log(error));
-    //     },
-    // }
+   
+   
 }
 </script>
 
 <template>
     <AppHeader />
+    <AppMain />
+
+    
 </template>
 
 <style>
