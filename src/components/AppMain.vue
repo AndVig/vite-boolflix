@@ -16,14 +16,27 @@
 <template>
     
     <main >
-        <ul >
+        <ul> <p>Movies</p>
             <li  v-for="movie in store.movies">
                 <p>Titolo: {{ movie.title }}</p>
                 <p>Titolo originale: {{ movie.original_title }}</p>
+                <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`">
                 <p  v-if="movie.original_language==='it'">Lingua:  <img class="bandiera" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/IT.svg" alt=""></p>
                 <p v-else-if="movie.original_language==='en'">Lingua: <img class="bandiera" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt=""></p>
                 <p v-else>Lingua: {{ movie.original_language }}</p>
                 <p>Voto: {{ movie.vote_average }}</p>
+                
+            </li>
+        </ul>
+        <ul> <p>Series</p>
+            <li  v-for="serie in store.series">
+                <p>Titolo: {{ serie.title }}</p>
+                <p>Titolo originale: {{ serie.original_title }}</p>
+                <img :src="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`">
+                <p  v-if="serie.original_language==='it'">Lingua:  <img class="bandiera" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/IT.svg" alt=""></p>
+                <p v-else-if="serie.original_language==='en'">Lingua: <img class="bandiera" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt=""></p>
+                <p v-else>Lingua: {{ serie.original_language }}</p>
+                <p>Voto: {{ serie.vote_average }}</p>
                 
             </li>
         </ul>

@@ -11,10 +11,13 @@ export default{
     },
     methods:{
         searchMovie(){
-            this.store.movies=[];
 
-            const url =this.store.apiInfo.baseUrl + this.store.apiInfo.endpoints.movies;
-            axios.get(url, {
+        //Reset
+            this.store.movies=[];
+            this.store.series=[];
+            //ricerca film
+            const urlMovie =this.store.apiInfo.baseUrl + this.store.apiInfo.endpoints.movies;
+            axios.get(urlMovie, {
                 params:{
                     api_key: this.store.apiInfo.key,
                     language: this.store.languageKey,
@@ -24,6 +27,21 @@ export default{
             .then((response)=> {
                 console.log(response.data.results);
                 this.store.movies=response.data.results;
+            })
+            .catch((error)=> console.log(error));
+
+            //ricerca serie
+            const urlSerie =this.store.apiInfo.baseUrl + this.store.apiInfo.endpoints.series;
+            axios.get(urlSerie, {
+                params:{
+                    api_key: this.store.apiInfo.key,
+                    language: this.store.languageKey,
+                    query:this.store.searchKey,
+                }
+            })
+            .then((response)=> {
+                console.log(response.data.results);
+                this.store.series=response.data.results;
             })
             .catch((error)=> console.log(error));
         },

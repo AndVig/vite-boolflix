@@ -10,7 +10,7 @@ export const store={
         baseUrl:'https://api.themoviedb.org/3/search/',
         endpoints: {
             movies:'movie',
-            tvs:'tv',
+            series:'tv',
         },
     }
 }
