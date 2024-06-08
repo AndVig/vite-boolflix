@@ -30,14 +30,28 @@ export default{
 </script>
 
 <template>
-    <h1>Boolflix</h1>
-    <div>
-        <label for="">Ricerca</label>
-        <input type="text" id="search-movie" v-model="store.searchKey">
-        <button @click="searchMovie">Cerca</button>
-    </div>
+    <header class="d-flex justify-content-between align-items-center p-3">
+            <h1>Boolflix</h1>
+        <div>
+            
+            <input type="text" id="search-movie" placeholder="Ricerca" v-model="store.searchKey">
+            <button @click="searchMovie">Cerca</button>
+        </div>
+    </header>
+    
 </template>
 
 <style>
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0e0e0e;
+    z-index: 1;
 
+    h1 {
+        color: red;
+    }
+}
 </style>
