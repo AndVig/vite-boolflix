@@ -35,7 +35,7 @@ export default{
         <div>
             
             <input type="text" id="search-movie" placeholder="Ricerca" v-model="store.searchKey">
-            <button @click="searchMovie">Cerca</button>
+            <button @click="searchMovie"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </header>
 
