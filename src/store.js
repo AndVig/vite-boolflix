@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
-export const store={
+export const store=reactive({
     movies:[],
     series:[],
     searchKey:'',
@@ -13,4 +13,4 @@ export const store={
             series:'tv',
         },
     }
-}
+});

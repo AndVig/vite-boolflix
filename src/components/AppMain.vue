@@ -25,6 +25,7 @@
                 <p v-else-if="movie.original_language==='en'">Lingua: <img class="bandiera" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt=""></p>
                 <p v-else>Lingua: {{ movie.original_language }}</p>
                 <p>Voto: {{ movie.vote_average }}</p>
+                <p><i v-for="n in 5" :key="n" class="fa-star" :class="{'fa-solid' : n <= Math.round(movie.vote_average / 2), 'fa-regular': n > Math.round(movie.vote_average / 2) }"></i></p>
                 
             </li>
         </ul>
@@ -37,7 +38,7 @@
                 <p v-else-if="serie.original_language==='en'">Lingua: <img class="bandiera" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt=""></p>
                 <p v-else>Lingua: {{ serie.original_language }}</p>
                 <p>Voto: {{ serie.vote_average }}</p>
-                
+                <p><i v-for="n in 5" :key="n" class="fa-star" :class="{'fa-solid' : n <= Math.round(serie.vote_average / 2), 'fa-regular': n > Math.round(serie.vote_average / 2) }"></i></p>
             </li>
         </ul>
     </main>
